@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:quiz_app/pages/second_screen.dart';
+
 import '../../models/question_model.dart';
 
 class QuestionsLocalData {
@@ -31,31 +35,31 @@ class QuestionsLocalData {
   }
 }
 
-// final QuestionsLocalData questionsLocalData = QuestionsLocalData();
-// _callPopUp(BuildContext context) {
-//   return AlertDialog(
-//     title: const Text('Popup example'),
-//     content: Column(
-//       mainAxisSize: MainAxisSize.min,
-//       crossAxisAlignment: CrossAxisAlignment.start,
-//       children: const <Widget>[
-//         Text("Hello"),
-//       ],
-//     ),
-//     actions: <Widget>[
-//       TextButton(
-//         onPressed: () {
-//           SchedulerBinding.instance.addPostFrameCallback((_) {
-//             Navigator.of(context)
-//                 .pop(MaterialPageRoute(builder: (context) => const MyWidget()));
-//           });
-//         },
+final QuestionsLocalData questionsLocalData = QuestionsLocalData();
+_callPopUp(BuildContext context) {
+  return AlertDialog(
+    title: const Text('Popup example'),
+    content: Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const <Widget>[
+        Text("Hello"),
+      ],
+    ),
+    actions: <Widget>[
+      TextButton(
+        onPressed: () {
+          SchedulerBinding.instance.addPostFrameCallback((_) {
+            Navigator.of(context)
+                .pop(MaterialPageRoute(builder: (context) => const MyWidget()));
+          });
+        },
         // style: TextButton.styleFrom(
         //   Theme.of(context).primaryColor,
 
         // ),
-//         child: const Text('Close'),
-//       ),
-//     ],
-//   );
-// }
+        child: const Text('Close'),
+      ),
+    ],
+  );
+}
